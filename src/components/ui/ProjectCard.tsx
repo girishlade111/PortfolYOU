@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-2">
+    <Card className="group overflow-hidden transition-all duration-300 hover:border-primary/50 hover:-translate-y-1">
       <CardHeader className="p-0">
         <div className="aspect-video overflow-hidden">
           <Image
@@ -26,17 +26,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardHeader>
       <CardContent className="p-6">
-        <h3 className="text-2xl font-bold font-headline mb-2">{project.title}</h3>
+        <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
         <p className="text-foreground/80 mb-4">{project.description}</p>
-      </CardContent>
-      <CardFooter className="flex flex-col items-start gap-4 p-6 pt-0">
          <div className="flex flex-wrap gap-2">
           {project.tech_stack.map((tech) => (
-            <Badge key={tech} variant="secondary" className="bg-accent/20 border-accent/50 text-foreground">
+            <Badge key={tech} variant="secondary">
               {tech}
             </Badge>
           ))}
         </div>
+      </CardContent>
+      <CardFooter className="p-6 pt-0">
         <Button asChild variant="outline" className="w-full">
           <Link href={project.link}>
             View Case Study

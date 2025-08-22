@@ -4,33 +4,33 @@ import ProjectCard from '@/components/ui/ProjectCard';
 const projects: Project[] = [
   {
     title: "E-commerce Platform Redesign",
-    description: "A complete overhaul of a legacy e-commerce site, focusing on a modern user experience, improved performance, and mobile-first design.",
+    description: "A complete overhaul of a legacy e-commerce site, focusing on a modern user experience and mobile-first design.",
     tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    image: "https://placehold.co/600x400/4B0082/FF00FF",
+    image: "https://placehold.co/600x400/121212/ffffff",
     link: "#",
     data_ai_hint: "ecommerce website"
   },
   {
     title: "SaaS Dashboard for Analytics",
-    description: "Designed and developed a complex data visualization dashboard for a SaaS product, enabling users to gain insights from their data.",
+    description: "Designed and developed a complex data visualization dashboard for a SaaS product.",
     tech_stack: ["React", "D3.js", "Node.js", "GraphQL"],
-    image: "https://placehold.co/600x400/FF00FF/222222",
+    image: "https://placehold.co/600x400/181818/ffffff",
     link: "#",
     data_ai_hint: "dashboard analytics"
   },
   {
     title: "Mobile App for Social Networking",
-    description: "A cross-platform mobile app designed to connect like-minded individuals, featuring real-time chat and event organization.",
+    description: "A cross-platform mobile app to connect like-minded individuals, featuring real-time chat and event organization.",
     tech_stack: ["React Native", "Firebase", "Figma"],
-    image: "https://placehold.co/600x400/222222/4B0082",
+    image: "https://placehold.co/600x400/242424/ffffff",
     link: "#",
     data_ai_hint: "mobile app"
   },
   {
     title: "Portfolio Website for a Photographer",
-    description: "A minimal and elegant portfolio website to showcase the works of a professional photographer, with a focus on high-quality imagery.",
+    description: "A minimal and elegant portfolio website to showcase the works of a professional photographer.",
     tech_stack: ["Gatsby", "Contentful", "GSAP"],
-    image: "https://placehold.co/600x400/4B0082/ffffff",
+    image: "https://placehold.co/600x400/323232/ffffff",
     link: "#",
     data_ai_hint: "photography portfolio"
   },

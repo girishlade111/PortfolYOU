@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import SparklesLogo from './SparklesLogo';
@@ -44,21 +43,21 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <a href="#home" className="flex items-center gap-2">
             <SparklesLogo className="h-8 w-8" />
             <span className="font-bold text-xl text-foreground">PortfolYOU</span>
-          </Link>
+          </a>
 
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors"
                 onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -93,14 +92,14 @@ export default function Header() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav className="flex flex-col items-center gap-6">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
                   className="text-foreground/80 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <Button asChild className="w-full">
                 <a href="/resume.pdf" download>

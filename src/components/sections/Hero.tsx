@@ -6,14 +6,14 @@ import { ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[calc(100vh-4rem)] w-full flex items-center justify-center text-center overflow-hidden py-20">
-      <div className="absolute inset-0 -z-10 bg-grid-fuchsia-900/10"></div>
+    <section id="home" className="relative min-h-[calc(100vh-5rem)] w-full flex items-center justify-center text-center overflow-hidden py-20">
+      <div className="absolute inset-0 -z-10 bg-grid-white/5"></div>
       <div className="container z-10">
-        <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 animate-fade-in-up">
-          <span className="text-primary">Creative</span> Developer &amp; UI/UX <span className="text-primary">Designer</span>
+        <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 animate-fade-in-up bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          Developer & Designer
         </h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10 animate-fade-in-up animation-delay-300">
-          I build beautiful, responsive, and user-centric web experiences. Turning complex problems into elegant, intuitive designs is my passion.
+          I build beautiful, responsive, and user-centric web experiences. Turning complex problems into elegant, intuitive designs.
         </p>
         <div className="flex justify-center gap-4 animate-fade-in-up animation-delay-600">
           <Button asChild size="lg" className="text-lg px-8 py-6">
@@ -30,8 +30,8 @@ export default function Hero() {
         </div>
       </div>
       <style jsx>{`
-        .bg-grid-fuchsia-900\\/10 {
-          background-image: linear-gradient(hsl(var(--primary) / 0.05) 1px, transparent 1px), linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, hsl(var(--background)) 1px);
+        .bg-grid-white\\/5 {
+          background-image: linear-gradient(hsl(var(--primary-foreground) / 0.05) 1px, transparent 1px), linear-gradient(to right, hsl(var(--primary-foreground) / 0.05) 1px, hsl(var(--background)) 1px);
           background-size: 2rem 2rem;
         }
         @keyframes fade-in-up {

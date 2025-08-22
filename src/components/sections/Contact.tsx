@@ -68,27 +68,27 @@ export default function Contact() {
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" placeholder="Your Name" required />
-                  {state?.errors?.name && <p className="text-sm text-red-500">{state.errors.name[0]}</p>}
+                  {state?.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" name="email" type="email" placeholder="your@email.com" required />
-                  {state?.errors?.email && <p className="text-sm text-red-500">{state.errors.email[0]}</p>}
+                  {state?.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" name="message" placeholder="Your message..." className="min-h-[120px]" required />
-                  {state?.errors?.message && <p className="text-sm text-red-500">{state.errors.message[0]}</p>}
+                  {state?.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
                 </div>
                 <SubmitButton />
               </form>
             </CardContent>
           </Card>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold mb-2">Email</h3>
-            <a href="mailto:hello@portfolyou.com" className="text-lg text-primary hover:underline">hello@portfolyou.com</a>
+            <a href="mailto:hello@portfolyou.com" className="text-lg text-foreground/80 hover:text-primary transition-colors">hello@portfolyou.com</a>
           </div>
            <div>
             <h3 className="text-xl font-bold mb-2">Location</h3>
@@ -98,13 +98,13 @@ export default function Contact() {
             <h3 className="text-xl font-bold mb-4">Connect with me</h3>
             <div className="flex gap-4">
               <Button asChild variant="outline" size="icon">
-                <Link href="#" target="_blank"><Github className="h-5 w-5" /></Link>
+                <a href="#" target="_blank"><Github className="h-5 w-5" /></a>
               </Button>
               <Button asChild variant="outline" size="icon">
-                <Link href="#" target="_blank"><Linkedin className="h-5 w-5" /></Link>
+                <a href="#" target="_blank"><Linkedin className="h-5 w-5" /></a>
               </Button>
                <Button asChild variant="outline" size="icon">
-                <Link href="#" target="_blank"><Twitter className="h-5 w-5" /></Link>
+                <a href="#" target="_blank"><Twitter className="h-5 w-5" /></a>
               </Button>
             </div>
           </div>

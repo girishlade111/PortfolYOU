@@ -39,11 +39,11 @@ export default function AIDescriptionGenerator() {
         </p>
       </div>
 
-      <Card className="max-w-4xl mx-auto">
+      <Card className="max-w-4xl mx-auto bg-card/50">
         <form action={formAction}>
           <CardHeader>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary/20 rounded-full">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 bg-primary/10 rounded-full">
                 <Bot className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-2xl font-headline">Generate Your Bio</CardTitle>
@@ -61,7 +61,7 @@ export default function AIDescriptionGenerator() {
                 placeholder="e.g., React, Next.js, Figma, UI/UX Design"
                 required
               />
-              {state?.errors?.skills && <p className="text-sm text-red-500">{state.errors.skills[0]}</p>}
+              {state?.errors?.skills && <p className="text-sm text-destructive">{state.errors.skills[0]}</p>}
             </div>
             <div className="space-y-2">
               <Label htmlFor="experience">Your Experience</Label>
@@ -72,7 +72,7 @@ export default function AIDescriptionGenerator() {
                 className="min-h-[100px]"
                 required
               />
-              {state?.errors?.experience && <p className="text-sm text-red-500">{state.errors.experience[0]}</p>}
+              {state?.errors?.experience && <p className="text-sm text-destructive">{state.errors.experience[0]}</p>}
             </div>
             <div className="space-y-2">
               <Label htmlFor="targetAudience">Target Audience</Label>
@@ -82,12 +82,12 @@ export default function AIDescriptionGenerator() {
                 placeholder="e.g., Tech Recruiters, Potential Clients, Startups"
                 required
               />
-              {state?.errors?.targetAudience && <p className="text-sm text-red-500">{state.errors.targetAudience[0]}</p>}
+              {state?.errors?.targetAudience && <p className="text-sm text-destructive">{state.errors.targetAudience[0]}</p>}
             </div>
           </CardContent>
           <CardFooter className="flex-col gap-4">
             <SubmitButton />
-            {state?.message && state.message !== 'Success' && <p className="text-sm text-red-500">{state.message}</p>}
+            {state?.message && state.message !== 'Success' && <p className="text-sm text-destructive">{state.message}</p>}
           </CardFooter>
         </form>
         {state?.description && (
