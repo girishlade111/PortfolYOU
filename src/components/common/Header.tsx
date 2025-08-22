@@ -30,6 +30,11 @@ export default function Header() {
             </a>
           ))}
         </nav>
+        <div className="hidden md:flex">
+          <Button asChild>
+            <a href="#contact">Download CV</a>
+          </Button>
+        </div>
         <div className="md:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
@@ -62,6 +67,11 @@ export default function Header() {
                     </a>
                   ))}
                 </nav>
+                <div className="mt-8">
+                  <Button asChild className="w-full">
+                    <a href="#contact" onClick={() => setIsMenuOpen(false)}>Download CV</a>
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
