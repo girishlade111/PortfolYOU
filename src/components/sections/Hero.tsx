@@ -10,20 +10,20 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-grid-white/5"></div>
       <div className="container z-10">
         <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 animate-fade-in-up bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-          Developer & Designer
+          Crafting Modern Web Experiences with Code & Design
         </h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10 animate-fade-in-up animation-delay-300">
-          I build beautiful, responsive, and user-centric web experiences. Turning complex problems into elegant, intuitive designs.
+          Hi, I’m Girish Lade, a Developer, UI/UX Designer, and AI Tools Maker. I build digital products that are fast, scalable, and beautifully designed — from websites and SaaS apps to AI-powered tools.
         </p>
         <div className="flex justify-center gap-4 animate-fade-in-up animation-delay-600">
           <Button asChild size="lg" className="text-lg px-8 py-6">
-            <Link href="#contact">
-              Get In Touch
+            <Link href="#projects">
+              View My Work
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6">
-            <Link href="#projects">
-              View My Work
+            <Link href="#contact">
+              Get In Touch
               <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>

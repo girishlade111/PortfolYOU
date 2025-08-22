@@ -3,36 +3,36 @@ import ProjectCard from '@/components/ui/ProjectCard';
 
 const projects: Project[] = [
   {
-    title: "E-commerce Platform Redesign",
-    description: "A complete overhaul of a legacy e-commerce site, focusing on a modern user experience and mobile-first design.",
-    tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+    title: "LadeStack – AI Developer Tools",
+    description: "A collection of AI-powered free tools for developers, from API testing to documentation generators.",
+    tech_stack: ["Next.js", "Tailwind", "Firebase", "LLM APIs"],
     image: "https://placehold.co/600x400/121212/ffffff",
-    link: "#",
-    data_ai_hint: "ecommerce website"
+    link: "https://ladestack.com",
+    data_ai_hint: "developer tools"
   },
   {
-    title: "SaaS Dashboard for Analytics",
-    description: "Designed and developed a complex data visualization dashboard for a SaaS product.",
-    tech_stack: ["React", "D3.js", "Node.js", "GraphQL"],
+    title: "E-Commerce Platform",
+    description: "Full-fledged multi-vendor e-commerce site with cart, checkout, Razorpay integration, and admin dashboard. Built in just 4 days with advanced filters and wishlist.",
+    tech_stack: ["React", "Firebase", "Node.js"],
     image: "https://placehold.co/600x400/181818/ffffff",
     link: "#",
-    data_ai_hint: "dashboard analytics"
+    data_ai_hint: "ecommerce platform"
   },
   {
-    title: "Mobile App for Social Networking",
-    description: "A cross-platform mobile app to connect like-minded individuals, featuring real-time chat and event organization.",
-    tech_stack: ["React Native", "Firebase", "Figma"],
+    title: "Phone Directory App",
+    description: "Airtable-powered contact directory with search, WhatsApp links, and social integrations.",
+    tech_stack: ["Airtable API", "Next.js", "TailwindCSS"],
     image: "https://placehold.co/600x400/242424/ffffff",
     link: "#",
-    data_ai_hint: "mobile app"
+    data_ai_hint: "directory app"
   },
   {
-    title: "Portfolio Website for a Photographer",
-    description: "A minimal and elegant portfolio website to showcase the works of a professional photographer.",
-    tech_stack: ["Gatsby", "Contentful", "GSAP"],
+    title: "Docs Summariser (Side Project)",
+    description: "AI-powered summarizer for documentation and articles.",
+    tech_stack: ["Python", "LLM APIs", "Streamlit"],
     image: "https://placehold.co/600x400/323232/ffffff",
     link: "#",
-    data_ai_hint: "photography portfolio"
+    data_ai_hint: "document summarizer"
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <h2 className="font-headline text-4xl md:text-5xl font-bold text-center mb-12">
-        My Work
+        Featured Work
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (

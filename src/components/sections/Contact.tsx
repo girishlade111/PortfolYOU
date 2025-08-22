@@ -9,8 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter } from 'lucide-react';
-import Link from 'next/link';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 
 const initialState = {
   success: false,
@@ -49,10 +48,10 @@ export default function Contact() {
     <section id="contact" className="py-20 md:py-32">
        <div className="text-center">
         <h2 className="font-headline text-4xl md:text-5xl font-bold mb-4">
-          Get In Touch
+          Let's Work Together
         </h2>
         <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-12">
-          Have a project in mind or just want to say hello? Feel free to reach out. I'm always open to discussing new opportunities.
+          I’m always open to discussing new projects, collaborations, or freelance opportunities. Whether you’re looking for a developer, a designer, or a partner for AI projects — let’s connect.
         </p>
       </div>
 
@@ -61,7 +60,6 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl font-headline">Contact Form</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
             </CardHeader>
             <CardContent>
               <form ref={formRef} action={formAction} className="space-y-6">
@@ -88,23 +86,19 @@ export default function Contact() {
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold mb-2">Email</h3>
-            <a href="mailto:hello@portfolyou.com" className="text-lg text-foreground/80 hover:text-primary transition-colors">hello@portfolyou.com</a>
-          </div>
-           <div>
-            <h3 className="text-xl font-bold mb-2">Location</h3>
-            <p className="text-lg text-foreground/80">San Francisco, CA</p>
+            <a href="mailto:girishlade111@gmail.com" className="text-lg text-foreground/80 hover:text-primary transition-colors">girishlade111@gmail.com</a>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Connect with me</h3>
             <div className="flex gap-4">
               <Button asChild variant="outline" size="icon">
-                <a href="#" target="_blank"><Github className="h-5 w-5" /></a>
+                <a href="https://github.com/girishlade111" target="_blank"><Github className="h-5 w-5" /></a>
               </Button>
               <Button asChild variant="outline" size="icon">
-                <a href="#" target="_blank"><Linkedin className="h-5 w-5" /></a>
+                <a href="https://www.linkedin.com/in/girish-lade/" target="_blank"><Linkedin className="h-5 w-5" /></a>
               </Button>
                <Button asChild variant="outline" size="icon">
-                <a href="#" target="_blank"><Twitter className="h-5 w-5" /></a>
+                <a href="https://www.instagram.com/girish_lade_" target="_blank"><Instagram className="h-5 w-5" /></a>
               </Button>
             </div>
           </div>
