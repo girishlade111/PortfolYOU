@@ -95,10 +95,10 @@ export default function Contact() {
                 <a href="https://github.com/girishlade111" target="_blank"><Github className="h-5 w-5" /></a>
               </Button>
               <Button asChild variant="outline" size="icon">
-                <a href="https://www.linkedin.com/in/girish-lade/" target="_blank"><Linkedin className="h-5 w-5" /></a>
+                <a href="https://www.linkedin.com/in/girish-lade-075bba201/" target="_blank"><Linkedin className="h-5 w-5" /></a>
               </Button>
                <Button asChild variant="outline" size="icon">
-                <a href="https://www.instagram.com/girish_lade_" target="_blank"><Instagram className="h-5 w-5" /></a>
+                <a href="https://www.instagram.com/girish_lade_/" target="_blank"><Instagram className="h-5 w-5" /></a>
               </Button>
             </div>
           </div>

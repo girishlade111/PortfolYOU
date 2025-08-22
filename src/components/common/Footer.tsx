@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Github, Linkedin, Instagram, Codepen, Mail } from 'lucide-react';
 import SparklesLogo from './SparklesLogo';
 
 export default function Footer() {
@@ -32,11 +32,17 @@ export default function Footer() {
             <a href="https://github.com/girishlade111" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
               <Github className="h-5 w-5" />
             </a>
-            <a href="https://www.linkedin.com/in/girish-lade/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/girish-lade-075bba201/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="https://www.instagram.com/girish_lade_" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
+            <a href="https://www.instagram.com/girish_lade_/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
               <Instagram className="h-5 w-5" />
+            </a>
+             <a href="https://codepen.io/Girish-Lade-the-looper" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
+              <Codepen className="h-5 w-5" />
+            </a>
+            <a href="mailto:girishlade111@gmail.com" className="text-foreground/60 hover:text-primary transition-colors">
+              <Mail className="h-5 w-5" />
             </a>
           </div>
         </div>
