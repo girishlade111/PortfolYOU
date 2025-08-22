@@ -17,7 +17,7 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-square rounded-lg overflow-hidden group order-first md:order-last">
           <Image
-            src="https://placehold.co/600x600"
+            src="https://images.unsplash.com/photo-1622041959584-2c9c28964a44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3aG8lMjBhbSUyMGklM0Z8ZW58MHx8fHwxNzU1ODYwNjk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Girish Lade profile photo"
             width={600}
             height={600}
