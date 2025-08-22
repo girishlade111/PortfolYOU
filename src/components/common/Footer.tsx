@@ -1,6 +1,15 @@
+"use client";
+
 import { Code2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="border-t border-border/40">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 py-6 px-4 sm:px-6 lg:px-8">
@@ -9,7 +18,7 @@ export default function Footer() {
           <span className="font-headline text-lg font-bold">PortfolYOU</span>
         </div>
         <p className="text-sm text-foreground/60">
-          © {new Date().getFullYear()} PortfolYOU. All rights reserved.
+          {currentYear ? `© ${currentYear} PortfolYOU. All rights reserved.` : '© PortfolYOU. All rights reserved.'}
         </p>
       </div>
     </footer>
