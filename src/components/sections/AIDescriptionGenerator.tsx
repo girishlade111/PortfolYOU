@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { generateDescriptionAction } from '@/app/actions';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -25,7 +26,7 @@ function SubmitButton() {
 }
 
 export default function AIDescriptionGenerator() {
-  const [state, formAction] = useFormState(generateDescriptionAction, initialState);
+  const [state, formAction] = useActionState(generateDescriptionAction, initialState);
 
   return (
     <section id="ai-tool" className="py-20 md:py-32">
