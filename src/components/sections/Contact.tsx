@@ -1,48 +1,52 @@
 "use client";
 
-import { useEffect, useRef, useActionState } from 'react';
-import { useFormStatus } from 'react-dom';
-import { sendContactMessageAction } from '@/app/actions';
+import { useRef, useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Instagram } from 'lucide-react';
 
-const initialState = {
-  success: false,
-  message: '',
-  errors: {},
-};
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full">
-      {pending ? 'Sending...' : 'Send Message'}
-    </Button>
-  );
-}
+type Errors = Partial<Record<"name" | "email" | "message", string[]>>;
 
 export default function Contact() {
-  const [state, formAction] = useActionState(sendContactMessageAction, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const [errors, setErrors] = useState<Errors>({});
+  const [sending, setSending] = useState(false);
 
-  useEffect(() => {
-    if (state.message) {
-      toast({
-        title: state.success ? "Message Sent!" : "Error",
-        description: state.message,
-        variant: state.success ? "default" : "destructive",
-      });
-      if (state.success) {
-        formRef.current?.reset();
-      }
-    }
-  }, [state, toast]);
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    const errs: Errors = {};
+    if (name.length < 2) errs.name = ["Name must be at least 2 characters."];
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = ["Please enter a valid email address."];
+    if (message.length < 10) errs.message = ["Message must be at least 10 characters."];
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+
+    setSending(true);
+    // Client-side only (static export): open the visitor's mail client with the
+    // message pre-filled, since there is no backend to deliver it.
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
+    window.location.href = `mailto:girishlade111@gmail.com?subject=${subject}&body=${body}`;
+    setSending(false);
+    toast({
+      title: "Message Ready!",
+      description: "Your email client should open with the message pre-filled. Just hit send!",
+    });
+    form.reset();
+    setErrors({});
+  }
 
   return (
     <section id="contact" className="py-20 md:py-32">
@@ -62,23 +66,25 @@ export default function Contact() {
               <CardTitle className="text-2xl font-headline">Contact Form</CardTitle>
             </CardHeader>
             <CardContent>
-              <form ref={formRef} action={formAction} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" placeholder="Your Name" required />
-                  {state?.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
+                  {errors?.name && <p className="text-sm text-destructive">{errors.name[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" name="email" type="email" placeholder="your@email.com" required />
-                  {state?.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+                  {errors?.email && <p className="text-sm text-destructive">{errors.email[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" name="message" placeholder="Your message..." className="min-h-[120px]" required />
-                  {state?.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
+                  {errors?.message && <p className="text-sm text-destructive">{errors.message[0]}</p>}
                 </div>
-                <SubmitButton />
+                <Button type="submit" disabled={sending} className="w-full">
+                  {sending ? 'Preparing...' : 'Send Message'}
+                </Button>
               </form>
             </CardContent>
           </Card>
